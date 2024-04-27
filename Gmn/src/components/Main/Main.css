@@ -29,7 +29,7 @@
     padding: 20px;
 }
 .main .greet span{
-    background: -webkit-linear-gradient(16deg,#4b90ff,#ff5546);/*43d4a4,#1f4e31*/
+    background: -webkit-linear-gradient(16deg,#43d4a4,#1f4e31);/*43d4a4,#1f4e31*/
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -120,7 +120,7 @@ overflow-y: scroll;
     gap: 20px;
 }
 .result img{
-    width: 40px;
+    width: 50px;
     border-radius: 50%;
 }
 .result-data{
@@ -175,7 +175,7 @@ overflow-y: scroll;
    }
    .main .bottom-info{
     font-size: 8px;
-    margin: 15px auto;
+    margin: 25px auto;
     text-align: center;
     font-weight: 200;
  }

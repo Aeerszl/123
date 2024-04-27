@@ -8,8 +8,8 @@ const{ onSent,recentPrompt,showResult, loading,resultData,setInput, input, }=use
   return (
     <div className='main'>
         <div className="nav">
-            <p> Gemini </p>
-          <img src={assets.user_icon} alt="" />
+            <p> Aliee AI</p>
+          <img src={assets.Anka_kus} alt="" />
         </div>
     <div className="main-container">
     
@@ -17,7 +17,7 @@ const{ onSent,recentPrompt,showResult, loading,resultData,setInput, input, }=use
     !showResult
   ?<>
    <div className="greet">
-        <p> <span>Hello,Dev.</span></p>
+        <p> <span>Hello, dear user</span></p>
         <p>How can I help you today?</p>
         </div>
         <div className="cards">
@@ -43,11 +43,11 @@ const{ onSent,recentPrompt,showResult, loading,resultData,setInput, input, }=use
   </>
 :<div className='result'>
       <div className="result-title">
-        <img src={assets.user_icon} alt="" className="" />
+        <img src={assets.Anka_kus} alt="" className="" />
         <p>{recentPrompt}</p>
       </div>
       <div className="result-data">
-        <img src={assets.gemini_icon} alt="" className="" />
+        <img src={assets.Kum_saat} alt="" className="" />
 {loading
 ? <div className='loader'>
 <hr/>
@@ -72,7 +72,7 @@ const{ onSent,recentPrompt,showResult, loading,resultData,setInput, input, }=use
                               </div>
                        </div>
                     <p className="bottom-info">
-                    Gemini may display inaccurate info, including about people, so double-check its responses. Your privacy and Gemini Apps
+                    This is a clone of &quot;Gemini&quot;. &quot;GeminiAPI&quot; has been utilized in this website.
                     </p>
               </div>
       </div>

@@ -13,7 +13,9 @@ import message_icon from './message_icon.png'
 import code_icon from './code_icon.png'
 import send_icon from './send_icon.png'
 import gemini_icon from './gemini_icon.png'
-
+import Aliee_logo from './Aliee logo.png'
+import Anka_kus from './Ankakuş.png'
+import Kum_saat from './Kumsaat.png'
 export const assets = {
     history_icon,
     menu_icon,
@@ -29,5 +31,8 @@ export const assets = {
     message_icon,
     code_icon,
     send_icon,
-    gemini_icon
+    gemini_icon,
+    Aliee_logo,
+    Anka_kus,
+    Kum_saat
 }
