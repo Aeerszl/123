@@ -39,6 +39,7 @@
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 15px;
     padding: 20px;
+    margin-top: -30px;
 }
 .main .card{
   height: 200px;
@@ -80,7 +81,7 @@ margin:auto;
     background-color: #f0f4f9;    
     padding: 10px 20px;
     border-radius: 50px;
-
+    margin-bottom:-20px;
 }
 .search-box img{
     width: 24px;
@@ -98,12 +99,14 @@ font-size: 18px;
    display: flex;
    align-items: center;
    gap: 15px; 
+   
 }
 .main .bottom-info{
-   font-size: 13px;
-   margin: 15px auto;
+   font-size: 14px;
+   margin: 20px auto;
    text-align: center;
    font-weight: 300;
+
 }
 .result{
 padding:0px 5%;
@@ -166,15 +169,17 @@ overflow-y: scroll;
     width: 20px;
    }
    .search-box{
-     
-    padding: 5px 10px;
+        padding: 5px 10px;
     margin-bottom:-20px;
    }
    .search-box div{
     gap: 5px;
    }
+   .search-box input{
+    font-size: 16px;
+   }
    .main .bottom-info{
-    font-size: 8px;
+    font-size: 12px;
     margin: 25px auto;
     text-align: center;
     font-weight: 200;

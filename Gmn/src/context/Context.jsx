@@ -1,37 +1,38 @@
+//Aliee AI
 import  { createContext,useState} from "react";  
 import runChat  from "../config/gemini";
-export const Context = createContext();
+export const Context = createContext();// createContext fonksiyonu ile bir Context oluşturulur
 
 const ContextProvider = (props) => {
-        const [input,setInput] = useState("");//giriş verilerini kaydetmek için
-        const[recentPrompt,setRecentPrompt] = useState("");//işlem  gozuken
-        const [prevPrompts,setPrevPrompts] = useState([]);//tüm giriş gecmişi
-        const [showResult,setShowResult] = useState(false);//son sekme 
-        const [loading,setLoading] = useState(false);//dogruysa yukleeme ekranı
-        const [resultData,setResultData] = useState("");
-    
-    const delaypara=(index,nextWord)=>{
+    const [input, setInput] = useState(""); // Kullanıcının giriş verisini saklar
+    const [recentPrompt, setRecentPrompt] = useState(""); // Son işlemi gösterir
+    const [prevPrompts, setPrevPrompts] = useState([]); // Tüm giriş geçmişini saklar
+    const [showResult, setShowResult] = useState(false); // Sonuç sekmesini gösterir
+    const [loading, setLoading] = useState(false); // Yüklenme durumunu saklar
+    const [resultData, setResultData] = useState(""); // Yanıt verisini saklar
+
+    const delaypara=(index,nextWord)=>{ // Kullanıcının girdiğini tek tek gönderir ve aralıklı olarak ekrana yazdırır
       setTimeout(function(){
       setResultData(prev=>prev+nextWord);
      },75*index)
     
     }
-    const newChat = () => {
+    const newChat = () => { // Yeni bir sohbet başlatır
 setLoading(false);
 setShowResult(false);
     }
-    const onSent =async (prompt) => {
+    const onSent =async (prompt) => { // Kullanıcının girdisini veya belirtilen bir promptu gönderir ve yanıtı işler
 
        setResultData("");
        setLoading(true);
        setShowResult(true);
        let response;
-       if(prompt !== undefined)
+       if(prompt !== undefined)   // Eğer belirtilen bir prompt varsa, onu kullanarak yanıt alır
        {
                response = await runChat(prompt);     
                setRecentPrompt(prompt); 
        }
-       else{
+       else{ // Yoksa, kullanıcının girdisini kullanarak yanıt alır
            setPrevPrompts(prev=>[...prev,input]);
            setRecentPrompt(input);
            response = await runChat(input); 
@@ -61,8 +62,15 @@ setShowResult(false);
       setInput("");
       
     }
+    // Enter tuşuna basıldığında girdiyi almak için olay dinleyicisi ekle
+/*document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        // Enter tuşuna basıldığında girdiyi al ve işle
+        onSent();
+    }
+});*/
     
-
+  // Context'e değerlerin atanması
     const contextValue = {
           prevPrompts,
           setPrevPrompts,
@@ -79,7 +87,7 @@ setShowResult(false);
 
 
 
-    }
+    }  // Context.Provider ile sağlanan değerlerin çocuk bileşenlere aktarılması
     return(
     <Context.Provider value={contextValue}>
         {props.children}    
